@@ -24,7 +24,7 @@ function loading() {
         body.style.overflow = "auto";
       }, 1000);
     }
-  },500)
+  },100)
 }
 //fungsi menjalankan filter dan pertama kali di panggil
 function run(value,tgll) {
