@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap');
+  </style>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <title>Jadwal sholat 5Waktu</title>
+</head>
+<body id="body">
+  <div id="load" class="loading">
+    <div class="load m-auto">
+      <div class="progres">
+        <div id="pro" class="pro"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container head">
+  	<div class="row ">
+	      <div class="col-4">
+	        <nav class="navbar pl-1 navbar-expand-lg navbar-dark ">
+        
+          <button class="full-left navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" id="cri"  href="http://robbet88.github.io/covid">Perkembangan Covid-19</a>
+            </div>
+          </div>
+        </nav>
+	      </div>
+	      <div class="col-8">
+	        <h3 class="j text-light py-2">5Waktu
+	      <div class="spinner-grow text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+	      </h3>
+	      </div>
+  	</div>
+  </div>
+	<div class="container  mt-3">
+	  <div class="row">
+	    <div class="col-12  mt-3 m-auto col-md-12 col-lg-8">
+	      <div class="card border border-0">
+	        <div class="container">
+	          <div class="row">
+  	          <div class="col-7 d-flex dgt p-1">
+    	          <div class="digital m-auto rounded d-flex ">
+    	            <div class="d-flex kotak m-auto p-1">
+        	          <div class="box">
+        	            <h5 id="jm" class="m-auto">00</h5>
+        	          </div> <span class="dot ml-1">:</span>
+        	          <div class="box mx-1">
+        	            <h5 id="mn" class="m-auto">00</h5>
+        	          </div> <span class="dot mr-1">:</span>
+        	          <div class="box">
+        	            <h5 id="dt" class="m-auto">00</h5>
+        	          </div>
+    	            </div>
+    	          </div>
+    	          <div class="tanggal my-1 d-flex">
+    	             <h6 class="text-center m-auto text-light">
+  	                 <i class="fas fa-calendar"> </i> <span id="tanggal">000</span>
+  	               </h6>
+    	          </div>
+  	          </div>
+  	          <div class="col-5 d-flex dgt p-1">
+    	            <div class="d-flex too">
+                    <div class="jdl text-center d-flex text-light"><h6 class="text-center m-auto">Menuju Waktu <span id="wait">..</span></h6></div>
+                    <div class="countdown text-center d-flex"><span id="countdown" class="m-auto">00:00:00</span></div>
+                  </div>
+        	        <div class="alarm my-1 d-flex">
+        	          <h6 class="text-light text-center m-auto">
+  	                  <i class="fas fa-alarm-clock"> </i> <span id="alarm">00:00</span>
+  	                </h6>
+        	        </div>
+        	     </div>
+  	          </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  <div class="row">
+	    <div class="col col-md-8 m-auto">
+	      <div class="card border-0 shadow">
+	        <div class="card-header hdcn">
+	          <div class="headcontent text-center text-light">
+	              <span id="cpt">Kosong</span> <button class="btn p-0 text-light" onclick="$('#Fhtngmdr').toggle()" id="edit"><i class="fas fa-calendar-edit"></i></button> 
+	          </div>
+	          <div id="Fhtngmdr" class="col mt-2">
+	            <div class="row">
+	              <div class="col-6 p-1">
+	                <input class="form-control" type="text" id="caption" value="Hari Raya Idul Fitri" placeholder="Caption Hitung Mundur"/>
+	              </div>
+	              <div class="col-6 p-1">
+	                <input class="form-control" type="text" id="jamm" value="06:00" placeholder="Jam format 01:00">
+	              </div>
+	              <div class="col-4 p-1">
+	                <input class="form-control" type="number" id="thn" value="2021" placeholder="Tahun" />
+	              </div>
+	              <div class="col-4 p-1">
+	                <input class="form-control" type="number" id="tgl" value="13" placeholder="tanggal format 01" />
+	              </div>
+	              <div class="col-4 p-1">
+	                <select class="form-control" name="" id="blnn">
+	                <option value="may" selected>Mei</option>
+	              </select>
+	              </div>
+	              <div class="col-12 p-1 d-flex">
+	                <input type="submit" class="form-control btn-sm btn-light" onclick="hitungMundur(caption.value,thn.value,tgl.value,blnn.value,jamm.value)" value="submit" />
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="card-body">
+	          <div class="htngmdr">
+	            <div class="hitung">
+	              <div class="box m-1 d-flex bx">
+	                <h6 class="ttl m-0">Hari</h6>
+	                <h4 class="cn m-0" id="day">000</h4>
+	              </div>
+	              <div class="box m-1 d-flex bx">
+	                <h6 class="ttl m-0">Jam</h6>
+	                <h4 class="cn m-0" id="hour">00</h4>
+	              </div>
+	              <div class="box m-1 d-flex bx">
+	                <h6 class="ttl m-0">Menit</h6>
+	                <h4 class="cn m-0" id="minute">00</h4>
+	              </div>
+	              <div class="box m-1 d-flex bx">
+	                <h6 class="ttl m-0">Detik</h6>
+	                <h4 class="cn m-0" id="second">00</h4>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <!--Content -->
+	  <div class="row mt-3 mb-5">
+	    <div class="col col-md-12 col-lg-8 mt-1 m-auto">
+	      <div class="card shadow  border border-0">
+	         <div class="card-body">
+	            <div class="ucp card border-0 p-0 border">
+	              <div id="manik" class="card-body d-flex p-2 text-justify">
+	                <p id="txt" class="m-auto text-primary text-center">Selamat Menjalankan Ibadah Puasa</p>
+	              </div>
+	            </div>
+	          <div class="col text-center mt-1 ovr">
+	            <div class="card border border-0">
+	              <h3 class="text-center judul">
+  	            Jadwal Sholat Harian <span id="kota"></span> <button id="btnC" class="btn btn-light"><i class="fa fa-filter"></i></button>
+  	            <div id="cari" class="mt-2 col">
+  	              <div class="form-group">
+  	                <select class="form-control" onchange="filter(search.value,jam())" id="search">
+  	                  <option value="691-Purwakarta" selected >Purwakarta</option>
+  	                </select>
+  	              </div>
+  	            </div>
+  	           </h3>
+	              <div class="card-body p-0 ovr d-flex  overflow-auto jw">
+	                
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Imsak</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="imsak" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Shubuh</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="subuh" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Terbit</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="terbit" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Dhuha</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="duha" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Dzuhur</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="duhur" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Ashar</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="ashar" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Maghrib</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="magrib" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Isya</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="isya" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Sekarang</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="now" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	           
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  
+	  <!-- footer -->
+	  <div class="row bg-dark mt-3 text-light">
+	    <div class="col-12">
+	      <div class="card bg-dark border border-0">
+	        <div class="card-body py-3">
+	          <h6 class="text-center">Created By Saripdn || @robbet88</h6>
+	        </div>
+	      </div>
+	    </div>
+	      <div class="col-3">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body  p-0 pb-2">
+	            Mohon Maaf Masih Banyak bug <i class="fa fa-bug"></i>
+	            
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-5">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body p-0">
+	            <i class="fab fa-js"></i> JavaScript<br>
+	            <i class="fa fa-code"></i> Jquery<br>
+	            <i class="fab fa-bootstrap"></i> Bootstrap<br>
+	            <a class="text-light" href="https://fathimah.docs.apiary.io/#introduction/dokumentasi"><i class="fa fa-server"></i> API <i class="fa fa-info-circle"></i>Fathimah Bot</a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-4">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body pl-1 pt-1">
+	            <a class="link text-light" href="https://www.facebook.com/robbet88"><i class="fab fa-facebook"></i> Saripdn</a><br>
+	            <a class="link text-light" href="https://www.instagram.com/robbet88"><i class="fab fa-instagram"></i> @robbet88</a><br>
+	            <a class="link text-light" href="https://t.me/robbett"><i class="fab fa-telegram"></i> @robbett</a><br>
+	            <a class="link text-light" href="https://github.com/robbet88"><i class="fab fa-github"></i> robbett88</a>
+	            <a class="link text-light" href="#"><i class="fa fa-envelope"></i> <i class="fa fa-at"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-12 mt-2">
+	        <h6 class="text-center">Thank You For Visited :)</h6>
+	      </div>
+	  </div>
+  </div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
