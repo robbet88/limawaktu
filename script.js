@@ -382,3 +382,13 @@ function hitungMundur(capt,tahun,tanggal,bulan,jam){
    }
   }, 1000);
 }
+
+
+function bacaAcak() {
+  $.ajax({
+    url: "https://api.banghasan.com/quran/format/json/acak",
+    success: function(rsl) {
+      console.log(rsl)
+    }
+  })
+}
