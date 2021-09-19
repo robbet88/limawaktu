@@ -27,19 +27,51 @@ body{
   padding: 2px;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
-  overflow: hidden;
-  background: #ffffff;
-  border: 2px solid #343434;
-  box-shadow: -1px 1px 5px 2px rgba(0,0,0,.2);
+  display: flex;
+  justify-content: Center;
+  align-items: space-evenly;
 }
-.loading>.load>.progres>.pro
+.loading>.load>.progres>.dot
 {
-  transition: 1s ease;
-  width: 0;
-  height: 100%;
-  background: #0073fc;
-  border-radius: 25px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #006de5;
+  animation: bbl .5s linear;
+}
+.loading>.load>.progres>.dot:nth-child(1)
+{
+  animation-delay: .1s;
+}
+.loading>.load>.progres>.dot:nth-child(2)
+{
+  animation-delay: .5s;
+}
+.loading>.load>.progres>.dot:nth-child(3)
+{
+  animation-delay: .9s;
+}
+.loading>.load>.progres>.dot:nth-child(4)
+{
+  animation-delay: 1.4s;
+}
+
+@keyframes bbl
+{
+  0%
+  {
+    transform: translateY(0%);
+  }
+  50%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(-10%);
+  }
+  
 }
 .box
 {
