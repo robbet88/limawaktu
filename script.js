@@ -1,30 +1,36 @@
 loading()
+setTimeout(function() {
+  if(confirm(`Coba Fitur Hitung Mundur?`) == true){
+    $("#mdr").toggle();
+    $("#Fhtngmdr").toggle()
+  }else{
+    alert(`Jika berubah pikiran klik menubar`);
+  }
+}, 6000);
 $(document).ready(() => {
   clock()
   opt()
   run(search.value,jam())
   maniik()
-  hitungMundur(caption.value,thn.value,tgl.value,blnn.value,jamm.value)
+  $("#mdr").toggle();
+  $("#Fhtngmdr").toggle()
+  //hitungMundur(caption.value,thn.value,tgl.value,blnn.value,jamm.value)
 })
 //untuk tombol cari
+$("#hitungMdr").on("click", (e) => {
+  e.preventDefault()
+  $("#mdr").toggle();
+  $("#Fhtngmdr").toggle()
+})
 $("#btnC").on("click", () => {
   $("#cari").toggle()
 })
 $("#cari").hide();
 function loading() {
-  let progres =0
-  let str = setInterval(() => {
-    progres +=5
-    pro.style.width = progres+"%"
-    if (progres == 100) {
-      clearInterval(str)
-      setTimeout(function() {
-        
-       $("#load").hide();
-        body.style.overflow = "auto";
-      }, 1000);
-    }
-  },80)
+  setTimeout(function() {
+    $("#load").hide();
+    body.style.overflow = "auto";
+  }, 3000);
 }
 //fungsi menjalankan filter dan pertama kali di panggil
 function run(value,tgll) {
@@ -46,7 +52,7 @@ function filter(idkot,tgll) {
     success: function(res) {
       
       let obj = res.jadwal.data
-      
+      console.log(res)
       //implementasi hasil ke jadwal
       imsak.textContent = obj.imsak
       duha.textContent = obj.dhuha
@@ -249,11 +255,15 @@ function randomTxt(jam, obj) {
     'untuk referensi scrip bisa minta langsung ke <br> <a href="https://t.me/robbett"><i class="fab fa-telegram"></i> @robbett</a>'+
     ' atau kunjungi <a href="https:/github.com/robbet88/"><i class="fab fa-github"></i> robbet88 </a>',
     "Created By Saripdn",
+    "For coorporation & Bussines email : robbetsyarif088@gmail.com",
+    "Follow My Instagram @robbet88",
     'Untuk Info API yang digunakan bisa klik <a href="https://fathimah.docs.apiary.io/#introduction/dokumentasi"> <i class="fa fa-info-circle"></i>Fathimah Bot</a>',
     "mohon maaf jika ada kesalahan <br>---Halaman Ini Masih Dalam Pengembangan---<br>:D",
-    "Selamat Menunaikan Ibadah Puasa",
+    "Shalatlah Sebelum Dishlatkan",
     "Terima Kasih Telah Mengunjungi Halaman Saya :)",
     "Jangan Lupa Shalat 5 Waktu:)",
+    `"Paksakan Dirimu Untuk Jadi Lebih Baik Setiap Harinya"`,
+    `"Berlian Tetap Berlian Walaupun Dilumuri Lumpur"`,
     'Jika Ingin Mengubah Kota Klik icon <i class="fa fa-filter"></i>'
   ]
   if (h >= obj.maghrib.split(":")[0] && h >= obj.maghrib.split(":")[1]) {
@@ -262,7 +272,7 @@ function randomTxt(jam, obj) {
     setInterval(() => {
       let pilih = Math.floor(Math.random()*rdm.length)
       txt.innerHTML = rdm[pilih]
-    }, 5000)
+    }, 10000)
   }
 }
 
@@ -334,7 +344,7 @@ let mli = null
 function hitungMundur(capt,tahun,tanggal,bulan,jam){
   cpt.textContent = capt
   clearInterval(mli)
-
+ $("#moment").show();
   $("#Fhtngmdr").toggle()
   let time = new Date(bulan+" "+tanggal+", "+tahun+" "+jam+":00").getTime()
    mli = setInterval(function() {
