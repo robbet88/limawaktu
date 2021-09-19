@@ -18,17 +18,24 @@
   <title>Jadwal sholat 5Waktu</title>
 </head>
 <body id="body">
+    <!-- loading-->
   <div id="load" class="loading">
     <div class="load m-auto">
       <div class="progres">
-        <div id="pro" class="pro"></div>
+        <div class="dot mx-1"></div>
+        <div class="dot mx-1"></div>
+        <div class="dot mx-1"></div>
+        <div class="dot mx-1"></div>
+        <!-- <div id="pro" class="pro"></div> -->
       </div>
     </div>
   </div>
+  
+  
   <div class="container head">
-  	<div class="row ">
-	      <div class="col-4">
-	        <nav class="navbar pl-1 navbar-expand-lg navbar-dark ">
+    <div class="row ">
+          <div class="col-4">
+            <nav class="navbar pl-1 navbar-expand-lg navbar-dark ">
         
           <button class="full-left navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,127 +43,128 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" id="hitungMdr"  href="#">Hitung mundur</a>
               <a class="nav-item nav-link active" id="cri"  href="http://robbet88.github.io/covid">Perkembangan Covid-19</a>
             </div>
           </div>
         </nav>
-	      </div>
-	      <div class="col-8">
-	        <h3 class="j text-light py-2">5Waktu
-	      <div class="spinner-grow text-warning" role="status">
+          </div>
+          <div class="col-8">
+            <h3 class="j text-light py-2">Jadwal Shalat
+          <div class="spinner-grow text-warning" role="status">
           <span class="sr-only">Loading...</span>
         </div>
-	      </h3>
-	      </div>
-  	</div>
+          </h3>
+          </div>
+    </div>
   </div>
-	<div class="container  mt-3">
-	  <div class="row">
-	    <div class="col-12  mt-3 m-auto col-md-12 col-lg-8">
-	      <div class="card border border-0">
-	        <div class="container">
-	          <div class="row">
-  	          <div class="col-7 d-flex dgt p-1">
-    	          <div class="digital m-auto rounded d-flex ">
-    	            <div class="d-flex kotak m-auto p-1">
-        	          <div class="box">
-        	            <h5 id="jm" class="m-auto">00</h5>
-        	          </div> <span class="dot ml-1">:</span>
-        	          <div class="box mx-1">
-        	            <h5 id="mn" class="m-auto">00</h5>
-        	          </div> <span class="dot mr-1">:</span>
-        	          <div class="box">
-        	            <h5 id="dt" class="m-auto">00</h5>
-        	          </div>
-    	            </div>
-    	          </div>
-    	          <div class="tanggal my-1 d-flex">
-    	             <h6 class="text-center m-auto text-light">
-  	                 <i class="fas fa-calendar"> </i> <span id="tanggal">000</span>
-  	               </h6>
-    	          </div>
-  	          </div>
-  	          <div class="col-5 d-flex dgt p-1">
-    	            <div class="d-flex too">
+    <div class="container  mt-3">
+      <div class="row">
+        <div class="col-12  mt-3 m-auto col-md-8 col-lg-8">
+          <div class="card border border-0">
+            <div class="container">
+              <div class="row">
+              <div class="col-7 d-flex dgt p-1">
+                <div class="digital m-auto rounded d-flex ">
+                  <div class="d-flex kotak m-auto p-1">
+                    <div class="box">
+                      <h5 id="jm" class="m-auto">00</h5>
+                    </div> <span class="dot ml-1">:</span>
+                    <div class="box mx-1">
+                      <h5 id="mn" class="m-auto">00</h5>
+                    </div> <span class="dot mr-1">:</span>
+                    <div class="box">
+                      <h5 id="dt" class="m-auto">00</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="tanggal my-1 d-flex">
+                   <h6 class="text-center m-auto text-light">
+                     <i class="fas fa-calendar"> </i> <span id="tanggal">000</span>
+                   </h6>
+                </div>
+              </div>
+              <div class="col-5 d-flex dgt p-1">
+                  <div class="d-flex too">
                     <div class="jdl text-center d-flex text-light"><h6 class="text-center m-auto">Menuju Waktu <span id="wait">..</span></h6></div>
                     <div class="countdown text-center d-flex"><span id="countdown" class="m-auto">00:00:00</span></div>
                   </div>
-        	        <div class="alarm my-1 d-flex">
-        	          <h6 class="text-light text-center m-auto">
-  	                  <i class="fas fa-alarm-clock"> </i> <span id="alarm">00:00</span>
-  	                </h6>
-        	        </div>
-        	     </div>
-  	          </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  <div class="row">
-	    <div class="col col-md-8 m-auto">
-	      <div class="card border-0 shadow">
-	        <div class="card-header hdcn">
-	          <div class="headcontent text-center text-light">
-	              <span id="cpt">Kosong</span> <button class="btn p-0 text-light" onclick="$('#Fhtngmdr').toggle()" id="edit"><i class="fas fa-calendar-edit"></i></button> 
-	          </div>
-	          <div id="Fhtngmdr" class="col mt-2">
-	            <div class="row">
-	              <div class="col-6 p-1">
-	                <input class="form-control" type="text" id="caption" value="Hari Raya Idul Fitri" placeholder="Caption Hitung Mundur"/>
-	              </div>
-	              <div class="col-6 p-1">
-	                <input class="form-control" type="text" id="jamm" value="06:00" placeholder="Jam format 01:00">
-	              </div>
-	              <div class="col-4 p-1">
-	                <input class="form-control" type="number" id="thn" value="2021" placeholder="Tahun" />
-	              </div>
-	              <div class="col-4 p-1">
-	                <input class="form-control" type="number" id="tgl" value="13" placeholder="tanggal format 01" />
-	              </div>
-	              <div class="col-4 p-1">
-	                <select class="form-control" name="" id="blnn">
-	                <option value="may" selected>Mei</option>
-	              </select>
-	              </div>
-	              <div class="col-12 p-1 d-flex">
-	                <input type="submit" class="form-control btn-sm btn-light" onclick="hitungMundur(caption.value,thn.value,tgl.value,blnn.value,jamm.value)" value="submit" />
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="card-body">
-	          <div class="htngmdr">
-	            <div class="hitung">
-	              <div class="box m-1 d-flex bx">
-	                <h6 class="ttl m-0">Hari</h6>
-	                <h4 class="cn m-0" id="day">000</h4>
-	              </div>
-	              <div class="box m-1 d-flex bx">
-	                <h6 class="ttl m-0">Jam</h6>
-	                <h4 class="cn m-0" id="hour">00</h4>
-	              </div>
-	              <div class="box m-1 d-flex bx">
-	                <h6 class="ttl m-0">Menit</h6>
-	                <h4 class="cn m-0" id="minute">00</h4>
-	              </div>
-	              <div class="box m-1 d-flex bx">
-	                <h6 class="ttl m-0">Detik</h6>
-	                <h4 class="cn m-0" id="second">00</h4>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	  <!--Content -->
+                  <div class="alarm my-1 d-flex">
+                    <h6 class="text-light text-center m-auto">
+                      <i class="fas fa-alarm-clock"> </i> <span id="alarm">00:00</span>
+                    </h6>
+                  </div>
+               </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col col-md-8 m-auto">
+          <div id="mdr" class="card border-0 shadow">
+            <div class="card-header hdcn">
+              <div class="headcontent text-center text-light">
+                  <span id="cpt">judul</span> <button class="btn p-0 text-light" onclick="$('#Fhtngmdr').toggle()" id="edit"><i class="fas fa-calendar-edit"></i></button> 
+              </div>
+              <div id="Fhtngmdr" class="col mt-2">
+                <div class="row">
+                  <div class="col-6 p-1">
+                    <input class="form-control" type="text" id="caption" value="Judul " placeholder="Caption Hitung Mundur"/>
+                  </div>
+                  <div class="col-6 p-1">
+                    <input class="form-control" type="text" id="jamm" value="06:00" placeholder="Jam format 01:00">
+                  </div>
+                  <div class="col-4 p-1">
+                    <input class="form-control" type="number" id="thn" placeholder="Tahun" />
+                  </div>
+                  <div class="col-4 p-1">
+                    <input class="form-control" type="number" id="tgl" placeholder="tanggal" />
+                  </div>
+                  <div class="col-4 p-1">
+                    <select class="form-control" name="" id="blnn" placeholder="bulan">
+                    
+                  </select>
+                  </div>
+                  <div class="col-12 p-1 d-flex">
+                    <input type="submit" class="form-control btn-sm btn-light" onclick="hitungMundur(caption.value,thn.value,tgl.value,blnn.value,jamm.value)" value="submit" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="moment" class="card-body">
+              <div class="htngmdr">
+                <div class="hitung">
+                  <div class="box m-1 d-flex bx">
+                    <h6 class="ttl m-0">Hari</h6>
+                    <h4 class="cn m-0" id="day">000</h4>
+                  </div>
+                  <div class="box m-1 d-flex bx">
+                    <h6 class="ttl m-0">Jam</h6>
+                    <h4 class="cn m-0" id="hour">00</h4>
+                  </div>
+                  <div class="box m-1 d-flex bx">
+                    <h6 class="ttl m-0">Menit</h6>
+                    <h4 class="cn m-0" id="minute">00</h4>
+                  </div>
+                  <div class="box m-1 d-flex bx">
+                    <h6 class="ttl m-0">Detik</h6>
+                    <h4 class="cn m-0" id="second">00</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Content-->
 	  <div class="row mt-3 mb-5">
-	    <div class="col col-md-12 col-lg-8 mt-1 m-auto">
+	    <div class="col col-md-8 col-lg-8 mt-1 m-auto">
 	      <div class="card shadow  border border-0">
 	         <div class="card-body">
 	            <div class="ucp card border-0 p-0 border">
 	              <div id="manik" class="card-body d-flex p-2 text-justify">
-	                <p id="txt" class="m-auto text-primary text-center">Selamat Menjalankan Ibadah Puasa</p>
+	                <p id="txt" class="m-auto text-primary text-center">Happy A Nice Day</p>
 	              </div>
 	            </div>
 	          <div class="col text-center mt-1 ovr">
@@ -253,7 +261,18 @@
 	      </div>
 	    </div>
 	  </div>
-	  
+	  <div class="row mt-3 mb-5">
+	    <div class="col-12">
+	      <div class="card">
+	        <div class="card-header">
+	          <h4>Bacalah</h4>
+	        </div>
+	        <div class="card-body text-center">
+	          <p>Coming Soon</p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 	  <!-- footer -->
 	  <div class="row bg-dark mt-3 text-light">
 	    <div class="col-12">
