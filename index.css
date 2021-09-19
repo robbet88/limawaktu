@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+#bacaan
+{
+  font-family: 'Amiri', serif;
+  line-height: 250%;
+}
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 *{
   font-family: 'Barlow Condensed', sans-serif;
