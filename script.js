@@ -384,11 +384,15 @@ function hitungMundur(capt,tahun,tanggal,bulan,jam){
 }
 
 
+bacaAcak();
 function bacaAcak() {
   $.ajax({
     url: "https://api.banghasan.com/quran/format/json/acak",
     success: function(rsl) {
-      console.log(rsl)
+      console.log(rsl);
+      bacaan.textContent = rsl.acak.ar.teks;
+      arti.textContent = `"${rsl.acak.id.teks}"(Q.S ${rsl.surat.nama}/${rsl.acak.id.surat}:${rsl.acak.id.ayat})`;
+      srt.textContent = `${rsl.surat.nama} / ${rsl.acak.id.surat} : ${rsl.acak.id.ayat}`;
     }
   })
 }
